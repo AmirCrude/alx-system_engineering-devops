@@ -64,3 +64,93 @@ The script uses double quotes to allow variable expansion
 
 The echo command outputs the formatted string
 
+### Task 2: The path to success is to take massive, determined action
+#### File: 2-path
+Objective: Add /action to the PATH environment variable, making it the last directory the shell searches for programs.
+
+Script Content:
+
+bash
+#!/bin/bash
+export PATH="$PATH:/action"
+Description:
+This script modifies the PATH environment variable by appending /action to its end. When the shell searches for executable programs, it will look in /action last, after checking all other directories in the PATH.
+
+Usage:
+
+```bash
+# Make the script executable
+chmod +x 2-path
+
+# Source the script to affect current shell session
+source ./2-path
+
+# Verify /action was added to PATH
+echo $PATH
+```
+Important Notes:
+
+The script must be sourced (not executed) to modify the current shell's environment
+
+Using export ensures the change is passed to child processes
+
+The $PATH variable expansion ensures existing paths are preserved
+
+/action is added to the end, making it the last directory searched
+
+Example Output:
+
+```bash
+# Before sourcing:
+/home/user/bin:/usr/local/bin:/usr/bin:/bin
+
+# After sourcing:
+/home/user/bin:/usr/local/bin:/usr/bin:/bin:/action
+```
+
+### Task 3: If the path be beautiful, let us not ask where it leads
+#### File: 3-paths
+Objective: Create a script that counts the number of directories in the PATH environment variable.
+
+Script Content:
+
+```bash
+#!/bin/bash
+echo $PATH | tr ':' '\n' | wc -l
+```
+Description:
+This script counts how many directories are listed in the PATH variable by converting colons to newlines and counting the resulting lines. Each directory in PATH is separated by a colon (:), so this transformation allows us to count them easily.
+
+Usage:
+
+```bash
+# Make the script executable
+chmod +x 3-paths
+
+# Run the script
+./3-paths
+
+# Or source it (both work)
+. ./3-paths
+```
+How it works:
+
+echo $PATH - Outputs the current PATH variable
+
+tr ':' '\n' - Replaces all colons with newlines, putting each directory on its own line
+
+wc -l - Counts the number of lines (each line = one directory)
+
+Example Output:
+
+```bash
+# If PATH=/bin:/usr/bin:/usr/local/bin
+./3-paths
+3
+
+# If PATH has 11 directories (as in the example)
+./3-paths
+11
+```
+Note: The script counts all directory entries in PATH, including empty ones if there are consecutive colons or trailing colons.
+
