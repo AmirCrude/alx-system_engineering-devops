@@ -32,3 +32,35 @@ ls
 ```
 **Note:** After sourcing this script, be cautious as ls will delete files. Use \ls to access the original ls command.
 
+### Task 1: Hello you
+#### File: 1-hello_you
+**Objective:** Create a script that prints hello user, where user is the current Linux user.
+
+**Script Content:**
+
+```bash
+#!/bin/bash
+echo "hello $USER"
+```
+**Description:**
+This script uses the $USER environment variable to get the current logged-in username and prints a greeting message in the format hello username.
+**Usage:**
+
+```bash
+# Make the script executable
+chmod +x 1-hello_you
+
+# Run the script
+./1-hello_you
+
+# Example output if username is 'amir':
+# hello amir
+```
+**How it works:**
+
+$USER is a built-in environment variable that stores the current username
+
+The script uses double quotes to allow variable expansion
+
+The echo command outputs the formatted string
+
