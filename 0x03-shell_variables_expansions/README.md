@@ -200,3 +200,59 @@ PWD=/home/amir/projects
 ```
 Note: The script should be sourced (source or .) to ensure it runs in the current shell context, though executing it (./4-global_variables) also works since printenv doesn't depend on shell-specific features.
 
+### Task 5: Local variables
+#### File: 5-local_variables
+Objective: Create a script that lists all local variables, environment variables, and shell functions.
+
+Script Content:
+
+```bash
+#!/bin/bash
+set
+```
+Description:
+This script uses the set command without arguments to display all shell variables (both local and environment) along with all shell function definitions. The output provides a complete view of the shell's current state.
+
+Usage:
+
+```bash
+# Make the script executable
+chmod +x 5-local_variables
+
+# Run the script (or source it as shown in example)
+./5-local_variables
+
+# Or source it
+. ./5-local_variables
+```
+How it works:
+
+The set command when used without options displays:
+
+Local variables: Variables defined in current shell session
+
+Environment variables: Variables exported to child processes
+
+Shell functions: All defined functions in the current shell
+
+Output format shows variables in a way that can be reused to recreate the shell environment
+
+Example Output (first few lines):
+
+```text
+BASH=/bin/bash
+BASHOPTS=checkwinsize:cmdhist:complete_fullquote:expand_aliases:extglob:extquote:force_fignore:histappend:interactive_comments:progcomp:promptvars:sourcepath
+BASH_ALIASES=()
+BASH_ARGC=()
+BASH_ARGV=()
+BASH_CMDS=()
+BASH_COMPLETION_COMPAT_DIR=/etc/bash_completion.d
+BASH_LINENO=()
+BASH_REMATCH=()
+BASH_SOURCE=()
+BASH_VERSINFO=([0]="4" [1]="3" [2]="46" [3]="1" [4]="release" [5]="x86_64-pc-linux-gnu")
+BASH_VERSION='4.3.46(1)-release'
+... (many more lines)
+```
+Note: The output will be extensive (typically 100+ lines) as it includes all shell internals. The script should be sourced (using . or source) to ensure it runs in the current shell context, though executing it also works.
+
