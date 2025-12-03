@@ -348,3 +348,25 @@ export DIVIDE=32
 ```
 Note: Uses integer division (truncates decimal). Both POWER and DIVIDE must be set as environment variables.
 
+### Task 10: Love is anterior to life, posterior to death, initial of creation, and the exponent of breath
+#### File: 10-love_exponent_breath
+Objective: Display the result of BREATH to the power LOVE (both environment variables).
+
+Script Content:
+
+```bash
+#!/bin/bash
+echo $((BREATH ** LOVE))
+```
+Description: Performs exponentiation using bash's ** operator within arithmetic expansion.
+
+Usage:
+
+```bash
+chmod +x 10-love_exponent_breath
+export BREATH=4
+export LOVE=3
+./10-love_exponent_breath  # Outputs: 64
+```
+Note: Uses ** for exponentiation (not ^ which is XOR). Both variables must be set in the environment.
+
