@@ -154,3 +154,49 @@ Example Output:
 ```
 Note: The script counts all directory entries in PATH, including empty ones if there are consecutive colons or trailing colons.
 
+### Task 4: Global variables
+#### File: 4-global_variables
+Objective: Create a script that lists all environment variables.
+
+Script Content:
+
+```bash
+#!/bin/bash
+printenv
+```
+Description:
+This script displays all environment variables available in the current shell session. Environment variables are global variables that are inherited by child processes and define the operating environment for programs.
+
+Usage:
+
+```bash
+# Make the script executable
+chmod +x 4-global_variables
+
+# Run the script (can also be sourced)
+./4-global_variables
+
+# Or source it as shown in the example
+source ./4-global_variables
+```
+How it works:
+
+printenv is a command that prints all environment variables in the format VARIABLE=value
+
+Environment variables include system-wide settings and user-specific configurations
+
+Common environment variables shown: USER, HOME, PATH, SHELL, PWD, etc.
+
+Example Output:
+
+```text
+USER=amir
+HOME=/home/amir
+PATH=/usr/local/bin:/usr/bin:/bin
+SHELL=/bin/bash
+LANG=en_US.UTF-8
+PWD=/home/amir/projects
+... (many more)
+```
+Note: The script should be sourced (source or .) to ensure it runs in the current shell context, though executing it (./4-global_variables) also works since printenv doesn't depend on shell-specific features.
+
