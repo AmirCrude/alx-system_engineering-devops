@@ -299,3 +299,30 @@ printenv | grep BEST # Shows: BEST=School
 ```
 Note: Use export to make variables global. Unlike local variables, these are inherited by child processes.
 
+### Task 8: Every addition to true knowledge is an addition to human power
+#### File: 8-true_knowledge
+Objective: Print the result of adding 128 to the value stored in environment variable TRUEKNOWLEDGE.
+
+Script Content:
+
+```bash
+#!/bin/bash
+echo $((128 + TRUEKNOWLEDGE))
+```
+Description: Performs arithmetic addition using bash's arithmetic expansion $(( )). Adds 128 to the value of the TRUEKNOWLEDGE environment variable.
+
+Usage:
+
+```bash
+chmod +x 8-true_knowledge
+export TRUEKNOWLEDGE=1209
+./8-true_knowledge  # Outputs: 1337
+```
+Example:
+
+```bash
+export TRUEKNOWLEDGE=1209
+./8-true_knowledge | cat -e  # Outputs: 1337$
+```
+Note: Uses bash arithmetic expansion $(( )) for calculation. The TRUEKNOWLEDGE variable must be set in the environment before running.
+
