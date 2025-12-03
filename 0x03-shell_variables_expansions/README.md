@@ -440,3 +440,24 @@ export NUM=3.14159265359
 ```
 Note: Uses printf (allowed) not bc, sed, or awk (not allowed). Automatically rounds to two decimal places.
 
+### Task 14: Decimal to Hexadecimal
+#### File: 100-decimal_to_hexadecimal
+Objective: Convert a decimal number (from DECIMAL environment variable) to hexadecimal.
+
+Script Content:
+
+```bash
+#!/bin/bash
+printf "%x\n" $DECIMAL
+```
+Description: Uses printf with %x format specifier to convert decimal to lowercase hexadecimal.
+
+Usage:
+
+```bash
+chmod +x 100-decimal_to_hexadecimal
+export DECIMAL=1337
+./100-decimal_to_hexadecimal  # Outputs: 539
+```
+Note: Uses %x for lowercase hexadecimal output. DECIMAL must be set as environment variable.
+
