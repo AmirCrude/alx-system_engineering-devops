@@ -419,3 +419,24 @@ Alphabetical order
 
 Note: Script must be ≤ 64 characters (this solution: 53 chars).
 
+### Task 13: Floats
+#### File: 13-print_float
+Objective: Print the number from environment variable NUM with exactly two decimal places.
+
+Script Content:
+
+```bash
+#!/bin/bash
+printf "%.2f\n" $NUM
+```
+Description: Uses printf to format the number with two decimal places, rounding as needed.
+
+Usage:
+
+```bash
+chmod +x 13-print_float
+export NUM=3.14159265359
+./13-print_float  # Outputs: 3.14
+```
+Note: Uses printf (allowed) not bc, sed, or awk (not allowed). Automatically rounds to two decimal places.
+
