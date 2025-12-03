@@ -256,3 +256,24 @@ BASH_VERSION='4.3.46(1)-release'
 ```
 Note: The output will be extensive (typically 100+ lines) as it includes all shell internals. The script should be sourced (using . or source) to ensure it runs in the current shell context, though executing it also works.
 
+### Task 6: Local variable
+#### File: 6-create_local_variable
+Objective: Create a new local variable named BEST with value School.
+
+Script Content:
+
+```bash
+#!/bin/bash
+BEST=School
+```
+Description: Creates a local shell variable BEST with value School. Local variables exist only in the current shell session.
+
+Usage:
+
+```bash
+chmod +x 6-create_local_variable
+source ./6-create_local_variable
+echo $BEST  # Outputs: School
+```
+Note: Use source to run in current shell. The variable won't be available to child processes.
+
