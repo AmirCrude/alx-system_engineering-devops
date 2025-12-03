@@ -491,7 +491,7 @@ Script Content:
 
 ```bash
 #!/bin/bash
-sed -n '1~2p'
+while read line; do echo "$line"; read line; done
 ```
 Description: Uses sed to select and print odd-numbered lines (1, 3, 5, ...) from stdin.
 
