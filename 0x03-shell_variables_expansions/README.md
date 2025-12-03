@@ -326,3 +326,25 @@ export TRUEKNOWLEDGE=1209
 ```
 Note: Uses bash arithmetic expansion $(( )) for calculation. The TRUEKNOWLEDGE variable must be set in the environment before running.
 
+### Task 9: Divide and rule
+#### File: 9-divide_and_rule
+Objective: Print the result of POWER divided by DIVIDE (both environment variables).
+
+Script Content:
+
+```bash
+#!/bin/bash
+echo $((POWER / DIVIDE))
+```
+Description: Performs integer division using bash arithmetic expansion. Divides the value of POWER by DIVIDE.
+
+Usage:
+
+```bash
+chmod +x 9-divide_and_rule
+export POWER=42784
+export DIVIDE=32
+./9-divide_and_rule  # Outputs: 1337
+```
+Note: Uses integer division (truncates decimal). Both POWER and DIVIDE must be set as environment variables.
+
