@@ -391,3 +391,31 @@ export BINARY=10100111001
 ```
 Note: 2# prefix tells bash to interpret the following digits as binary. Only contains 0s and 1s.
 
+### Task 12: Combination
+#### File: 12-combinations
+Objective: Print all possible two-letter combinations (a-z) except oo, one per line, alphabetically sorted.
+
+Script Content:
+
+```bash
+#!/bin/bash
+echo {a..z}{a..z} | tr ' ' '\n' | grep -v oo
+```
+Description: Uses brace expansion to generate all combinations, converts to one per line, and excludes oo.
+
+Usage:
+
+```bash
+chmod +x 12-combinations
+./12-combinations
+./12-combinations | wc -l  # Outputs: 675
+```
+Output Details:
+
+Total combinations: 675 (26×26 - 1)
+First: aa, Last: zz
+Missing: oo
+Alphabetical order
+
+Note: Script must be ≤ 64 characters (this solution: 53 chars).
+
