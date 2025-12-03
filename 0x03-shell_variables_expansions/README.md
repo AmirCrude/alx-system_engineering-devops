@@ -40,7 +40,7 @@ ls
 
 ```bash
 #!/bin/bash
-echo "hello $USER"
+echo "hello $(whoami)"
 ```
 **Description:**
 This script uses the $USER environment variable to get the current logged-in username and prints a greeting message in the format hello username.
