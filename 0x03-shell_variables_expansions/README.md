@@ -370,3 +370,24 @@ export LOVE=3
 ```
 Note: Uses ** for exponentiation (not ^ which is XOR). Both variables must be set in the environment.
 
+### Task 11: There are 10 types of people in the world -- Those who understand binary, and those who don't
+#### File: 11-binary_to_decimal
+Objective: Convert a binary number (from environment variable BINARY) to decimal.
+
+Script Content:
+
+```bash
+#!/bin/bash
+echo $((2#$BINARY))
+```
+Description: Uses bash arithmetic expansion with base notation 2# to interpret the binary string as a base-2 number and convert it to decimal.
+
+Usage:
+
+```bash
+chmod +x 11-binary_to_decimal
+export BINARY=10100111001
+./11-binary_to_decimal  # Outputs: 1337
+```
+Note: 2# prefix tells bash to interpret the following digits as binary. Only contains 0s and 1s.
+
