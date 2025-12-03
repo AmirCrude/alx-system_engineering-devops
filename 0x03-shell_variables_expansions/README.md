@@ -277,3 +277,25 @@ echo $BEST  # Outputs: School
 ```
 Note: Use source to run in current shell. The variable won't be available to child processes.
 
+### Task 7: Global variable
+#### File: 7-create_global_variable
+Objective: Create a new global (environment) variable named BEST with value School.
+
+Script Content:
+
+```bash
+#!/bin/bash
+export BEST=School
+```
+Description: Creates and exports an environment variable BEST with value School. Environment variables are available to the current shell and all child processes.
+
+Usage:
+
+```bash
+chmod +x 7-create_global_variable
+source ./7-create_global_variable
+echo $BEST           # Outputs: School
+printenv | grep BEST # Shows: BEST=School
+```
+Note: Use export to make variables global. Unlike local variables, these are inherited by child processes.
+
