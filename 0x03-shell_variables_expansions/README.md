@@ -483,3 +483,32 @@ echo "Uryyb" | ./101-rot13        # Outputs: Hello (decodes)
 ```
 Note: Only affects letters A-Z and a-z. Numbers, symbols, and non-ASCII characters pass through unchanged.
 
+### Task 16: The eggs of the brood need to be an odd number
+#### File: 102-odd
+Objective: Print every other line from input, starting with the first line.
+
+Script Content:
+
+```bash
+#!/bin/bash
+sed -n '1~2p'
+```
+Description: Uses sed to select and print odd-numbered lines (1, 3, 5, ...) from stdin.
+
+Usage:
+
+```bash
+chmod +x 102-odd
+ls -1 | ./102-odd
+```
+Example:
+
+```bash
+printf "A\nB\nC\nD\nE\n" | ./102-odd
+# Outputs:
+# A
+# C
+# E
+```
+Note: sed -n '1~2p' means: start at line 1, step by 2 lines, print. Works with piped input or file redirection.
+
