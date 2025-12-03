@@ -461,3 +461,25 @@ export DECIMAL=1337
 ```
 Note: Uses %x for lowercase hexadecimal output. DECIMAL must be set as environment variable.
 
+### Task 15: Everyone is a proponent of strong encryption
+#### File: 101-rot13
+Objective: Encode/decode text using ROT13 encryption (rotate by 13 positions).
+
+Script Content:
+
+```bash
+#!/bin/bash
+tr 'A-Za-z' 'N-ZA-Mn-za-m'
+```
+Description: Uses tr to translate letters using ROT13 cipher. ROT13 is its own inverse (encode and decode use same transformation).
+
+Usage:
+
+```bash
+chmod +x 101-rot13
+echo "Hello" | ./101-rot13        # Outputs: Uryyb
+echo "Uryyb" | ./101-rot13        # Outputs: Hello (decodes)
+./101-rot13 < input.txt > output.txt
+```
+Note: Only affects letters A-Z and a-z. Numbers, symbols, and non-ASCII characters pass through unchanged.
+
